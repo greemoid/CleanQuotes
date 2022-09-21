@@ -6,6 +6,7 @@ import com.greemoid.cleanquotes.core.FailureFactory
 import com.greemoid.cleanquotes.data.QuoteCloudDataSource
 import com.greemoid.cleanquotes.data.QuoteService
 import com.greemoid.cleanquotes.domain.GetQuoteUseCase
+import com.greemoid.cleanquotes.presentation.BaseCommunication
 import com.greemoid.cleanquotes.presentation.MainViewModel
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -24,6 +25,7 @@ class QuoteApp : Application() {
             .build()
 
         viewModel = MainViewModel(useCase = (GetQuoteUseCase(QuoteCloudDataSource(retrofit.create(
-            QuoteService::class.java), FailureFactory(BaseResourceManager(this))))))
+            QuoteService::class.java), FailureFactory(BaseResourceManager(this))))),
+            communication = BaseCommunication())
     }
 }
