@@ -7,16 +7,21 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.greemoid.cleanquotes.core.CommonViewModel
 import com.greemoid.cleanquotes.core.presentation.Communication
+import com.greemoid.cleanquotes.di.DefaultDispatcher
+import com.greemoid.cleanquotes.di.MainDispatcher
 import com.greemoid.cleanquotes.domain.GetQuoteUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MainViewModel(
+@HiltViewModel
+class MainViewModel @Inject constructor(
     private val useCase: GetQuoteUseCase,
     private val communication: Communication,
-    private val dispatcher: CoroutineDispatcher = Dispatchers.Main,
+    @MainDispatcher private val dispatcher: CoroutineDispatcher = Dispatchers.Main,
 ) : ViewModel(), CommonViewModel {
 
 

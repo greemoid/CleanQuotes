@@ -3,8 +3,9 @@ package com.greemoid.cleanquotes.data
 import com.greemoid.cleanquotes.core.FailureHandler
 import com.greemoid.cleanquotes.domain.QuoteItem
 import com.greemoid.cleanquotes.domain.QuoteRepository
+import javax.inject.Inject
 
-class QuoteCloudDataSource(
+class QuoteCloudDataSource @Inject constructor(
     private val quoteService: QuoteService,
     private val failureHandler: FailureHandler,
 ) : QuoteRepository {

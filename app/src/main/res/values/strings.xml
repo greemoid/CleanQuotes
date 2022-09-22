@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">CleanQuotes</string>
-    <string name="no_connection">No Internet Connection</string>
-    <string name="service_unavailable">Service Unavailable</string>
-    <string name="generic_exception">Something Went Wrong</string>
+    <string name="app_name" translatable="false">CleanQuotes</string>
+    <string name="no_connection" translatable="false">No Internet Connection</string>
+    <string name="service_unavailable" translatable="false">Service Unavailable</string>
+    <string name="generic_exception" translatable="false">Something Went Wrong</string>
+    <string name="get_quote" translatable="false">Get Quote</string>
 </resources>

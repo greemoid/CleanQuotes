@@ -1,6 +1,8 @@
 package com.greemoid.cleanquotes.domain
 
+import javax.inject.Inject
 
-class GetQuoteUseCase(private val repository: QuoteRepository) {
+
+class GetQuoteUseCase @Inject constructor(private val repository: QuoteRepository) {
     suspend fun getQuote(): QuoteItem = repository.getQuote()
 }
